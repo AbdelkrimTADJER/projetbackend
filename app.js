@@ -88,8 +88,8 @@ app.post('/delete/:taskId', function(req, res) {
 
 
 app.post('/remind', (req, res) => {
-    const { email, sujet, heure, contenu } = req.body;
-    console.log(email, sujet, heure, contenu);
+    const { email, sujet, heure } = req.body;
+    let contenu = ["c est le monment de", sujet];
 
     const transporter = nodemailer.createTransport({
         service: 'outlook',
@@ -99,7 +99,7 @@ app.post('/remind', (req, res) => {
         }
     });
 
-    if (!email || !sujet || !heure || !contenu) {
+    if (!email || !sujet || !heure) {
         return res.status(400).json({ message: 'Veuillez fournir toutes les données requises.' });
     }
 

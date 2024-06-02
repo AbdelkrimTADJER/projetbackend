@@ -8,11 +8,37 @@ const blogSchema = new Schema({
         required: true 
     },
 
-    hour : {
+    hourreminder : {
         type : String, 
         required: false 
     },
 
+    description : {
+        type : String, 
+        required: false 
+    },
+
+    hourcreated : {
+        type : String, 
+        required: false 
+    },
+
+    statue : {
+        type : String, 
+        required: false 
+    },
+
+    link : {
+        type : String, 
+        required: false 
+    },
+
+    comment : {
+        type : String, 
+        required: false 
+    },
+
+   
   
 }, {timestamps: true})
 
